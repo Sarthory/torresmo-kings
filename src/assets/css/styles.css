@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Coiny");
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column; }
+  .contact-container h1 {
+    align-self: center; }
+
+.contact-form {
+  width: 65%; }
+  .contact-form textarea {
+    resize: none; }
+  .contact-form__button {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    padding: 10px 30px; }
+
+.site-header {
+  min-height: 90px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+  .site-header__logo {
+    position: absolute;
+    bottom: -80px;
+    height: auto; }
+    .site-header__logo img {
+      transform: rotate(-30deg);
+      -ms-transform: rotate(-30deg);
+      -moz-transform: rotate(-30deg);
+      -webkit-transform: rotate(-30deg);
+      -o-transform: rotate(-30deg); }
+  .site-header__menu {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .site-header__menu__item {
+      margin: 0 5px;
+      text-decoration: none;
+      text-align: center;
+      color: inherit;
+      font-size: 1em;
+      padding: 12px;
+      font-weight: bold;
+      transition: .4s ease;
+      border: 3px solid transparent;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px; }
+      .site-header__menu__item:hover {
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        text-decoration: none;
+        border: 3px solid black;
+        color: inherit; }
+    .site-header__menu__search {
+      align-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1; }
+      .site-header__menu__search svg {
+        width: 30px;
+        height: 30px;
+        fill: black; }
+
+.col-sm {
+  text-align: center; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around; }
+  footer .footer-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    footer .footer-menu img {
+      height: 32px;
+      padding: 0px 15px; }
