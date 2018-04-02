@@ -9,6 +9,7 @@ const Header = () => (
             </Link>
         </div>
         <div className="col-md-6 site-header__menu">
+            <Link className="site-header__menu__item" to="/">Home</Link>
             <Link className="site-header__menu__item" to="/menu">Cardápio</Link>
             <Link className="site-header__menu__item" to="/contacts">Fale conosco</Link>
             <Link className="site-header__menu__item" to="/register">Cadastre-se</Link>
