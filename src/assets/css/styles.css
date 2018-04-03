@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Coiny");
+body {
+  background: linear-gradient(to right, #9e0000, red);
+  height: 100vh; }
+
+.home {
+  display: flex;
+  justify-content: space-around; }
+
 .contact-container {
   display: flex;
   align-items: center;
@@ -73,6 +81,69 @@
 .col-sm {
   text-align: center; }
 
+.story {
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 35px;
+  border: 10px solid black;
+  background-color: white; }
+  .story__img {
+    margin-top: 15px;
+    border-radius: 50%;
+    width: 140px;
+    border: 3px solid black; }
+  .story__title {
+    padding-top: 15px; }
+  .story__explanation {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: justify; }
+  .story__social-media {
+    margin-left: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: start; }
+    .story__social-media img:first-child {
+      border: 0.5px solid black;
+      border-radius: 10%; }
+    .story__social-media img {
+      margin-left: 5px; }
+
+.home-tiles {
+  border: 10px solid black;
+  border-radius: 5px;
+  margin-top: 35px; }
+  .home-tiles__link {
+    color: inherit;
+    text-decoration: none; }
+    .home-tiles__link:hover {
+      color: inherit;
+      text-decoration: none; }
+    .home-tiles__link h1 {
+      position: absolute;
+      z-index: 10;
+      margin-left: 15px;
+      margin-top: 5px;
+      color: white;
+      text-shadow: 0 0 3px black; }
+    .home-tiles__link .col-sm {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      overflow: hidden;
+      height: 100%; }
+      .home-tiles__link .col-sm img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        min-width: 100%;
+        min-height: 100%;
+        filter: brightness(50%);
+        transition: filter 0.5s; }
+        .home-tiles__link .col-sm img:hover {
+          filter: brightness(100%); }
+
 footer {
   position: absolute;
   bottom: 0;
@@ -90,3 +161,28 @@ footer {
     footer .footer-menu img {
       height: 32px;
       padding: 0px 15px; }
+  footer .site-footer {
+    min-height: 90px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; }
+    footer .site-footer__menu {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap; }
+      footer .site-footer__menu__item {
+        margin: 0 5px;
+        text-decoration: none;
+        text-align: center;
+        color: inherit;
+        font-size: 1em;
+        padding: 12px;
+        font-weight: bold;
+        transition: .4s ease;
+        border: 3px solid transparent;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px; }

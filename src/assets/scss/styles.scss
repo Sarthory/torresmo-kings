@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Coiny');
 
+body{
+  background: linear-gradient(to right, rgb(158, 0, 0), rgb(255, 0, 0));
+  height: 100vh;
+}
+
+.home {
+  display: flex;
+  justify-content: space-around;
+}
+
 .contact-container {
   display: flex;
   align-items: center;
@@ -15,7 +25,7 @@
 .contact-form {
   width: 65%;
 
-  textarea{
+  textarea {
     resize: none;
   }
 
@@ -36,17 +46,17 @@
   justify-content: center;
   position: relative;
 
-  &__logo{
+  &__logo {
     position: absolute;
     bottom: -80px;
     height: auto;
 
-    img{
-      transform:          rotate(-30deg);
-      -ms-transform:      rotate(-30deg);
-      -moz-transform:     rotate(-30deg);
-      -webkit-transform:  rotate(-30deg);
-      -o-transform:       rotate(-30deg);
+    img {
+      transform: rotate(-30deg);
+      -ms-transform: rotate(-30deg);
+      -moz-transform: rotate(-30deg);
+      -webkit-transform: rotate(-30deg);
+      -o-transform: rotate(-30deg);
     }
 
   }
@@ -70,7 +80,7 @@
       -webkit-border-radius: 15px;
       -moz-border-radius: 15px;
       border-radius: 15px;
-      &:hover{
+      &:hover {
         -webkit-border-radius: 50px;
         -moz-border-radius: 50px;
         border-radius: 50px;
@@ -100,6 +110,83 @@
   text-align: center;
 }
 
+.story {
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 35px;
+  border: 10px solid black;
+  background-color: white;
+  &__img {
+    margin-top: 15px;
+    border-radius: 50%;
+    width: 140px;
+    border: 3px solid black;
+  }
+  &__title {
+    padding-top: 15px;
+  }
+  &__explanation {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: justify;
+  }
+  &__social-media {
+    margin-left: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    img:first-child {
+      border: 0.5px solid black;
+      border-radius: 10%;
+    }
+    img {
+      margin-left: 5px;
+    }
+  }
+}
+
+.home-tiles{
+  border: 10px solid black;
+  border-radius: 5px;
+  margin-top: 35px;
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+    h1{
+      position: absolute;
+      z-index: 10;
+      margin-left: 15px;
+      margin-top: 5px;
+      color: white;
+      text-shadow: 0 0 3px black;
+    }
+    .col-sm{
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      overflow: hidden;
+      height: 100%;
+      img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        min-width: 100%;
+        min-height: 100%;
+        filter: brightness(50%);
+        transition: filter 0.5s;
+        &:hover{
+          filter: brightness(100%);
+        }
+      }
+    }
+  }
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -111,14 +198,43 @@ footer {
   display: flex;
   justify-content: space-around;
 
-  .footer-menu{
+  .footer-menu {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
-    img{
+    img {
       height: 32px;
       padding: 0px 15px;
+    }
+  }
+  .site-footer {
+    min-height: 90px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &__menu {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      &__item {
+        margin: 0 5px;
+        text-decoration: none;
+        text-align: center;
+        color: inherit;
+        font-size: 1em;
+        padding: 12px;
+        font-weight: bold;
+        transition: .4s ease;
+        border: 3px solid transparent;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+      }
     }
   }
 }
