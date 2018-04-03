@@ -13,7 +13,12 @@ body {
   justify-content: center;
   flex-flow: column; }
   .contact-container h1 {
-    align-self: center; }
+    padding-top: 15px;
+    align-self: center;
+    color: white; }
+  .contact-container span {
+    padding-bottom: 15px;
+    color: white; }
 
 .contact-form {
   width: 65%; }
@@ -186,3 +191,6 @@ footer {
         -webkit-border-radius: 15px;
         -moz-border-radius: 15px;
         border-radius: 15px; }
+
+.cancel {
+  margin-left: 10px; }

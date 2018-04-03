@@ -17,7 +17,13 @@ body{
   flex-flow: column;
 
   h1 {
+    padding-top: 15px;
     align-self: center;
+    color: white;
+  }
+  span{
+    padding-bottom: 15px;
+    color: white;
   }
 
 }
@@ -237,4 +243,8 @@ footer {
       }
     }
   }
+}
+
+.cancel{
+  margin-left: 10px;
 }

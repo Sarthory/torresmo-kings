@@ -5,7 +5,7 @@ const HomePage = () => (
     <div className="container home">
         <div className="col-md-4">
             <div className="story">
-                <img className="story__img" src="/img/porcao_torresmo_home.png"/>
+                <img className="story__img" alt="História" src="/img/porcao_torresmo_home.png"/>
                 <h1 className="story__title">História</h1>
                 <p className="story__explanation">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit a augue molestie
@@ -24,13 +24,13 @@ const HomePage = () => (
                 <Link className="home-tiles__link w-50" to="/#">
                     <h1>Nossas lojas</h1>
                     <div className="col-sm">
-                        <img src="/img/our-stores.jpg" />
+                        <img alt="Nossas lojas" src="/img/our-stores.jpg" />
                     </div>
                 </Link>
                 <Link className="home-tiles__link w-50" to="/menu">
                     <h1>Cardápio</h1>
                     <div className="col-sm">
-                        <img src="/img/menu.jpeg" />
+                        <img alt="Cardápio" src="/img/menu.jpeg" />
                     </div>
                 </Link>
             </div>
@@ -38,13 +38,13 @@ const HomePage = () => (
                 <Link className="home-tiles__link w-50" to="/#">
                     <h1>Merchandising</h1>
                     <div className="col-sm">
-                        <img src="/img/merchan.jpg" />
+                        <img alt="Merchandising" src="/img/merchan.jpg" />
                     </div>
                 </Link>
                 <Link className="home-tiles__link w-50" to="/#">
                     <h1>Eventos</h1>
                     <div className="col-sm">
-                        <img src="/img/events.jpg" />
+                        <img alt="Eventos" src="/img/events.jpg" />
                     </div>
                 </Link>
             </div>
