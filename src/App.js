@@ -23,10 +23,10 @@ class App extends Component {
                 <div className="App">
                     <Header/>
                     <Route exact path="/" component={HomePage}/>
-                    <Route exact path="/products" component={ProductsPage}/>
-                    <Route exact path="/contacts" component={ContactsPage}/>
-                    <Route exact path="/menu" component={MenuPage}/>
-                    <Route exact path="/register" component={RegisterPage}/>
+                    <Route path="/products" component={ProductsPage}/>
+                    <Route path="/contacts" component={ContactsPage}/>
+                    <Route path="/menu" component={MenuPage}/>
+                    <Route path="/register" component={RegisterPage}/>
                     <Footer/>
                 </div>
             </Router>

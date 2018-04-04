@@ -5,11 +5,10 @@ const Header = () => (
     <nav className="navbar navbar-fixed-top navbar-expand-lg navbar-warning bg-warning navbar-fixed-top site-header">
         <div className="col-md-6">
             <Link className="site-header__logo" to="/">
-            <img width="150px" src="/img/crown.png" alt="Logo" />
+                <img width="150px" src="/img/crown.png" alt="Logo"/>
             </Link>
         </div>
         <div className="col-md-6 site-header__menu">
-            <Link className="site-header__menu__item" to="/">Home</Link>
             <Link className="site-header__menu__item" to="/menu">Cardápio</Link>
             <Link className="site-header__menu__item" to="/contacts">Fale conosco</Link>
             <Link className="site-header__menu__item" to="/register">Cadastre-se</Link>

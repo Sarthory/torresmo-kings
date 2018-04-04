@@ -1,12 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Coiny');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
-body{
-  background: linear-gradient(to right, rgb(158, 0, 0), rgb(255, 0, 0));
-  height: 100vh;
+@mixin media-query($point) {
+  @if $point == desktop {
+    @media (max-width: 1280px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+body {
+  background: linear-gradient(to right, rgb(158, 0, 0), rgb(255, 0, 47));
+  h1 {
+    font-family: "Permanent Marker", cursive;
+  }
 }
 
 .home {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -15,24 +35,39 @@ body{
   align-items: center;
   justify-content: center;
   flex-flow: column;
+  width: 75%;
+  min-height: calc(100vh - 220px);
+  height: auto;
 
   h1 {
     padding-top: 15px;
     align-self: center;
     color: white;
   }
-  span{
+
+  h4 {
+    color: whitesmoke;
+  }
+
+  span {
     padding-bottom: 15px;
     color: white;
   }
-
 }
 
 .contact-form {
-  width: 65%;
+  width: 60%;
 
-  textarea {
+  @include media-query(mobile) {
+    width: 100%;
+  }
+
+  textarea,
+  input[type="password"],
+  input[type="email"],
+  input[type="text"] {
     resize: none;
+    border: 4px solid black;
   }
 
   &__button {
@@ -51,11 +86,21 @@ body{
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #9e0000;
 
   &__logo {
     position: absolute;
     bottom: -80px;
     height: auto;
+
+    @include media-query(mobile) {
+      display: none;
+    }
+
+    @include media-query(tablet) {
+      bottom: -100px;
+    }
 
     img {
       transform: rotate(-30deg);
@@ -78,21 +123,25 @@ body{
       text-decoration: none;
       text-align: center;
       color: inherit;
-      font-size: 1em;
-      padding: 12px;
+      font-size: 1.2em;
+      padding: 12px 20px;
       font-weight: bold;
-      transition: .4s ease;
-      border: 3px solid transparent;
+      transition: .5s ease-in-out;
+      border: 4px solid transparent;
       -webkit-border-radius: 15px;
       -moz-border-radius: 15px;
       border-radius: 15px;
+      font-family: 'Permanent Marker', cursive;
+
       &:hover {
         -webkit-border-radius: 50px;
         -moz-border-radius: 50px;
         border-radius: 50px;
         text-decoration: none;
-        border: 3px solid black;
-        color: inherit;
+        border: 4px solid black;
+        background: #d40000;
+        color: #ffc107;
+        text-shadow: 1px 1px 5px black;
       }
     }
 
@@ -112,72 +161,86 @@ body{
   }
 }
 
-.col-sm {
-  text-align: center;
-}
-
+// Home story card
 .story {
   border-radius: 5px;
   text-align: center;
   margin-top: 35px;
   border: 10px solid black;
   background-color: white;
+
   &__img {
     margin-top: 15px;
     border-radius: 50%;
     width: 140px;
-    border: 3px solid black;
+    height: 140px;
+    border: 4px solid black;
   }
+
   &__title {
     padding-top: 15px;
+    font-family: 'Permanent Marker', cursive;
   }
+
   &__explanation {
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
     text-align: justify;
   }
+
   &__social-media {
     margin-left: 5px;
     padding: 10px;
     display: flex;
     justify-content: start;
+
     img:first-child {
       border: 0.5px solid black;
       border-radius: 10%;
     }
+
     img {
       margin-left: 5px;
     }
   }
 }
 
-.home-tiles{
+// Home menu
+.home-tiles {
   border: 10px solid black;
   border-radius: 5px;
   margin-top: 35px;
+
   &__link {
     color: inherit;
     text-decoration: none;
+
     &:hover {
       color: inherit;
       text-decoration: none;
     }
-    h1{
+
+    span {
       position: absolute;
       z-index: 10;
       margin-left: 15px;
       margin-top: 5px;
       color: white;
       text-shadow: 0 0 3px black;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 2em;
     }
-    .col-sm{
+
+    .col-sm {
       display: flex;
+      flex-wrap: wrap;
       justify-content: start;
       align-items: center;
       overflow: hidden;
       height: 100%;
-      img{
+
+      img {
         position: absolute;
         left: 0;
         top: 0;
@@ -185,7 +248,8 @@ body{
         min-height: 100%;
         filter: brightness(50%);
         transition: filter 0.5s;
-        &:hover{
+
+        &:hover {
           filter: brightness(100%);
         }
       }
@@ -193,58 +257,344 @@ body{
   }
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
+// Menu page
+.menu-container {
+  min-height: calc(100vh - 220px);
+  margin-top: 50px;
+  height: auto;
+
+  .menu {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      height: auto;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      border: 10px solid black;
+      color: whitesmoke;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      margin: 5px;
+      padding: 10px 15px;
+      text-decoration: none;
+      transition: .5s ease-in-out;
+
+      &:hover {
+        background: black;
+      }
+
+      &__thumb {
+        overflow: hidden;
+        width: 170px;
+        height: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 170px;
+        margin-right: 30px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+
+        &--portions {
+          @extend .menu__item__thumb;
+          background: url("/img/porcoes.png") no-repeat center;
+          background-size: 122%;
+        }
+
+        &--drinks {
+          @extend .menu__item__thumb;
+          background: url("/img/bebidas.jpg") no-repeat center;
+          background-size: 156%;
+        }
+
+        &--lunches {
+          @extend .menu__item__thumb;
+          background: url("/img/lanches.jpeg") no-repeat center;
+          background-size: 156%;
+        }
+      }
+
+      &__info {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-flow: column;
+
+        &__name {
+          font-family: 'Permanent Marker', cursive;
+          font-size: 2.1em;
+        }
+      }
+    }
+  }
+}
+
+// Products page
+.products-container {
+  margin-top: 50px;
+  height: auto;
+
+  .products-side-menu {
+
+    @include media-query(mobile) {
+      display: none;
+    }
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      height: auto;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      border: 10px solid black;
+      color: whitesmoke;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      margin: 5px;
+      padding: 10px;
+      text-decoration: none;
+      transition: .5s ease-in-out;
+
+      &:hover {
+        background: black;
+      }
+
+      &__thumb {
+        overflow: hidden;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 55px;
+
+        &--portions {
+          @extend .products-side-menu__item__thumb;
+          background: url("/img/porcoes.png") no-repeat center;
+          background-size: 128%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+        }
+
+        &--drinks {
+          @extend .products-side-menu__item__thumb;
+          background: url("/img/bebidas.jpg") no-repeat center;
+          background-size: 150%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+        }
+
+        &--lunches {
+          @extend .products-side-menu__item__thumb;
+          background: url("/img/lanches.jpeg") no-repeat center;
+          background-size: 150%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+        }
+      }
+
+      &__name {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 1.5em;
+      }
+
+      &.selected {
+        background: black;
+        border-color: #ffc107;
+      }
+    }
+  }
+
+  .products {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 150px);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    border: 10px solid black;
+    color: whitesmoke;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    text-decoration: none;
+    transition: .5s ease-in-out;
+
+    &__detail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      &__thumb {
+        overflow: hidden;
+        width: 250px;
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 250px;
+        margin-right: 30px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background: url("/img/porcoes.png") no-repeat center;
+        background-size: 122%;
+      }
+
+      &__info {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-flow: column;
+
+        &__name {
+          font-family: 'Permanent Marker', cursive;
+          font-size: 2.5em;
+        }
+
+        &__nutrition-facts {
+
+          @include media-query(mobile) {
+            display: none;
+          }
+
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #ffc107;
+          width: auto;
+          color: black;
+          padding: 5px 10px;
+          font-family: 'Permanent Marker', cursive;
+          transition: .2s ease-in-out;
+
+          &:hover {
+            background: #ff002f;
+            color: whitesmoke;
+
+            svg {
+              fill: whitesmoke;
+            }
+          }
+
+          svg {
+            transition: .2s ease-in-out;
+            width: 35px;
+            fill: black;
+          }
+        }
+      }
+    }
+
+    &__slider{
+      width: 100%;
+      height: 185px;
+      background: darkgrey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__left-arrow{
+        align-self: flex-start;
+        width: 70px;
+        height: 100%;
+        background: gray;
+      }
+
+      &__thumbs{
+        flex: 1;
+      }
+
+      &__right-arrow{
+        align-self: flex-end;
+        width: 70px;
+        height: 100%;
+        background: gray;
+      }
+    }
+  }
+}
+
+// Footer
+.site-footer {
   width: 100%;
-  height: 60px;
-  line-height: 60px;
+  min-height: 60px;
   background-color: black;
   color: white;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
 
-  .footer-menu {
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    &__item {
+      margin: 0 5px;
+      text-decoration: none;
+      text-align: left;
+      color: inherit;
+      font-size: 0.9rem;
+      padding: 12px;
+      font-weight: bold;
+      transition: .4s ease;
+      border: 3px solid transparent;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+
+      &:hover {
+        text-decoration: dashed;
+        color: #ffc107;
+      }
+    }
+  }
+
+  &__icons {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
     img {
       height: 32px;
-      padding: 0px 15px;
-    }
-  }
-  .site-footer {
-    min-height: 90px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    &__menu {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      &__item {
-        margin: 0 5px;
-        text-decoration: none;
-        text-align: center;
-        color: inherit;
-        font-size: 1em;
-        padding: 12px;
-        font-weight: bold;
-        transition: .4s ease;
-        border: 3px solid transparent;
-        -webkit-border-radius: 15px;
-        -moz-border-radius: 15px;
-        border-radius: 15px;
-      }
+      margin: 10px 15px;
     }
   }
 }
 
-.cancel{
+.cancel {
   margin-left: 10px;
 }
