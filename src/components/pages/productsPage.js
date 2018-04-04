@@ -3,6 +3,24 @@ import {Link} from "react-router-dom";
 
 class ProductsPage extends Component {
 
+    state = {
+        porcao: {
+            name: "INFARTO",
+            description: `Maybe there's a little something happening right here.
+            If you didn't have baby clouds, you wouldn't have big clouds. Son of a gun.
+            Little trees and bushes grow however makes them happy.`
+        }
+    }
+
+
+    // detailProduct(){
+    //     this.setState({
+    //         porcao:{
+    //             name: 
+    //         }
+    //     })
+    // }
+
     render() {
         return (
             <div className="container">
@@ -38,14 +56,10 @@ class ProductsPage extends Component {
                                 <div className="products__detail__thumb"/>
                                 <div className="products__detail__info">
                                     <h2 className="products__detail__info__name">
-                                        Porção Explode Coração
+                                        {this.state.porcao.name}
                                     </h2>
                                     <span className="products__detail__info__description">
-                                        <p>Let's make some happy little clouds in our world.
-                                            Maybe there's a little something happening right here.
-                                            If you didn't have baby clouds, you wouldn't have big clouds. Son of a gun.
-                                            Little trees and bushes grow however makes them happy.
-                                            You are only limited by your imagination.</p>
+                                        <p>{this.state.porcao.description}</p>
                                     </span>
                                     <Link to="#" className="products__detail__info__nutrition-facts">
                                         <svg viewBox="0 0 24 24">
@@ -62,7 +76,7 @@ class ProductsPage extends Component {
                                     </svg>
                                 </div>
                                 <div className="products__slider__thumbs">
-
+                                    <div data-product id="1" className="product-thumb"/>
                                 </div>
                                 <div className="products__slider__right-arrow">
                                     <svg viewBox="0 0 24 24">
