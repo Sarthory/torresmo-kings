@@ -41,8 +41,8 @@ const RegisterPage = () => (
                     </label>
                 </div>
             </div>
-            <button className="btn btn-danger contact-form__button">SALVAR</button>
             <input type="reset" className="btn btn-warning contact-form__button cancel" value="X"/>
+            <button className="btn btn-danger contact-form__button">SALVAR</button>
         </form>
     </div>
 

@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 
 const HomePage = () => (
     <div className="container-fluid home">
-        <div className="col-md-4">
-            <div className="story">
+        <div className="col-md-2">
+            {/*<div className="story container">
                 <img className="story__img" alt="História" src="/img/porcoes.png"/>
                 <h1 className="story__title">História</h1>
                 <p className="story__explanation">
@@ -18,9 +18,9 @@ const HomePage = () => (
                     <img alt="Facebook" src="/img/facebook-32-black.png"/>
                     <img alt="Instagram" src="/img/instagram-32-black.png"/>
                 </div>
-            </div>
+            </div>*/}
         </div>
-        <div className="col-md-7 home-tiles">
+        <div className="col-md-8 home-tiles">
             <div className="row h-50">
                 <Link className="home-tiles__link w-50" to="/#">
                     <span>Nossas lojas</span>
@@ -50,6 +50,7 @@ const HomePage = () => (
                 </Link>
             </div>
         </div>
+        <div className="col-md-2"/>
     </div>
 );
 

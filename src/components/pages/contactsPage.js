@@ -7,7 +7,7 @@ const ContactsPage = () => (
         <form className="form-group contact-form">
             <input placeholder="Nome" className="form-control contact-form__input" type="text"/><br/>
             <input placeholder="E-mail" className="form-control" type="text"/><br/>
-            <textarea rows="4" placeholder="Mensagem" className="form-control"/><br/>
+            <textarea rows="5" placeholder="Mensagem" className="form-control"/><br/>
             <button className="btn btn-danger contact-form__button">ENVIAR</button>
         </form>
     </div>
