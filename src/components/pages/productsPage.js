@@ -5,7 +5,7 @@ class ProductsPage extends Component {
 
     state = {
         porcao: {
-            name: "INFARTO",
+            name: "Porção Heart Attack",
             description: `Maybe there's a little something happening right here.
             If you didn't have baby clouds, you wouldn't have big clouds. Son of a gun.
             Little trees and bushes grow however makes them happy.`
@@ -76,7 +76,13 @@ class ProductsPage extends Component {
                                     </svg>
                                 </div>
                                 <div className="products__slider__thumbs">
-                                    <div data-product id="1" className="product-thumb"/>
+                                    <div id="prod-1" className="product-thumb"/>
+                                    {/* <div data-product id="prod-2" className="product-thumb--2"/>
+                                    <div data-product id="prod-3" className="product-thumb--3"/>
+                                    <div data-product id="prod-4" className="product-thumb--4"/>
+                                    <div data-product id="prod-5" className="product-thumb--5"/>
+                                    <div data-product id="prod-6" className="product-thumb--6"/>
+                                    <div data-product id="prod-7" className="product-thumb--7"/> */}
                                 </div>
                                 <div className="products__slider__right-arrow">
                                     <svg viewBox="0 0 24 24">
