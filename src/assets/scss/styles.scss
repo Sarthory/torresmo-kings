@@ -110,25 +110,12 @@ body {
 
   &__logo {
     position: absolute;
-    bottom: -80px;
+    bottom: -120px;
     height: auto;
 
     @include media-query(mobile) {
       display: none;
     }
-
-    @include media-query(tablet) {
-      bottom: -100px;
-    }
-
-    img {
-      transform: rotate(-25deg);
-      -ms-transform: rotate(-25deg);
-      -moz-transform: rotate(-25deg);
-      -webkit-transform: rotate(-25deg);
-      -o-transform: rotate(-25deg);
-    }
-
   }
 
   &__menu {

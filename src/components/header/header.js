@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom';
 const Header = () => (
     <nav className="navbar navbar-fixed-top navbar-expand-lg navbar-fixed-top site-header">
         <div className="col-md-4">
-            <Link className="site-header__logo" to="/">
-                <img width="150px" src="/img/crown.png" alt="Logo"/>
+            <Link id="logo" className="site-header__logo" to="/">
+                <img width="180px" src="/img/logo.png" alt="Logo"/>
             </Link>
         </div>
         <div className="col-md-8 site-header__menu">

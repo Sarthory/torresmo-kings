@@ -10,7 +10,11 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script
+            src="https://code.jquery.com/jquery-1.9.1.min.js"
+            integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="
+            crossorigin="anonymous"></script>
     <script
             src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
             integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
@@ -25,7 +29,7 @@
 <div id="root">
 </div>
 <script type="text/javascript">
-    $(function () {
+    document.addEventListener("DOMContentLoaded", function () {
         let slider = $('#slider-items');
         let slides = slider.children().length;
         let slideWidth = 800;
@@ -55,7 +59,15 @@
                 slider.css({left: new_pos});
             }
         });
-    });
+
+        function bounce() {
+            $('#logo').effect("bounce", 1500);
+        }
+
+        setInterval(function () {
+            bounce()
+        }, 6000);
+    })
 </script>
 </body>
 </html>
