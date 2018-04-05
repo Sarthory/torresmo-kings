@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#9e0000"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script><title>Torresmo Kings - O Melhor Torresmo da Região</title><link href="/static/css/main.fca3921f.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript">document.addEventListener("DOMContentLoaded", function () {
+        let slider = $('#slider-items');
+        let slides = slider.children().length;
+        let slideWidth = 800;
+        let min = 0;
+        let max = -((slides - 1) * slideWidth);
+
+        slider.width(slides * slideWidth).draggable({
+            axis: 'x',
+            drag: function (event, ui) {
+                if (ui.position.left > min) ui.position.left = min;
+                if (ui.position.left < max) ui.position.left = max;
+            }
+        });
+
+        $('#left-slide').on('click', function () {
+            let pos = slider.css('left');
+            let pos_parse = parseInt(pos.replace("px", ""));
+            let new_pos = pos_parse - 120;
+            slider.css({left: new_pos});
+        });
+
+        $('#right-slide').on('click', function () {
+            let pos = slider.css('left');
+            let pos_parse = parseInt(pos.replace("px", ""));
+            if (pos_parse < 0) {
+                let new_pos = pos_parse + 120;
+                slider.css({left: new_pos});
+            }
+        });
+
+        function bounce() {
+            $('#logo').effect("bounce", 1500);
+        }
+
+        setInterval(function () {
+            bounce()
+        }, 6000);
+    })</script><script type="text/javascript" src="/static/js/main.ef687a70.js"></script></body></html>
