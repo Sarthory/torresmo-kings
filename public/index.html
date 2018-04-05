@@ -3,15 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#0099FF">
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <meta name="theme-color" content="#9e0000">
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+
     <title>Torresmo Kings - O Melhor Torresmo da Região</title>
 </head>
 <body>
@@ -20,5 +24,38 @@
 </noscript>
 <div id="root">
 </div>
+<script type="text/javascript">
+    $(function () {
+        let slider = $('#slider-items');
+        let slides = slider.children().length;
+        let slideWidth = 800;
+        let min = 0;
+        let max = -((slides - 1) * slideWidth);
+
+        slider.width(slides * slideWidth).draggable({
+            axis: 'x',
+            drag: function (event, ui) {
+                if (ui.position.left > min) ui.position.left = min;
+                if (ui.position.left < max) ui.position.left = max;
+            }
+        });
+
+        $('#left-slide').on('click', function () {
+            let pos = slider.css('left');
+            let pos_parse = parseInt(pos.replace("px", ""));
+            let new_pos = pos_parse - 120;
+            slider.css({left: new_pos});
+        });
+
+        $('#right-slide').on('click', function () {
+            let pos = slider.css('left');
+            let pos_parse = parseInt(pos.replace("px", ""));
+            if (pos_parse < 0) {
+                let new_pos = pos_parse + 120;
+                slider.css({left: new_pos});
+            }
+        });
+    });
+</script>
 </body>
 </html>
